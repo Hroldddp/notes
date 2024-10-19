@@ -1,0 +1,139 @@
+body {
+    font-family: 'Lexend', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    background-image: linear-gradient(0deg, rgba(40, 40, 40, 0.5) 1px, transparent 1px);
+    background-size: 100% 40px;
+    min-height: 100vh;
+    color: #e0e0e0;
+}
+
+.toolbar {
+    background-color: rgba(34, 34, 34, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toolbar:hover {
+    background-color: rgba(40, 40, 40, 0.95);
+}
+
+.toolbar button, .toolbar select {
+    background-color: #444;
+    color: #e0e0e0;
+    border: none;
+    padding: 8px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Lexend', sans-serif;
+    border-radius: 5px;
+}
+
+.toolbar button:hover, .toolbar select:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toolbar button.active {
+    background-color: #666;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.notebook {
+    padding: 20px;
+    min-height: calc(100vh - 120px);
+    box-sizing: border-box;
+}
+
+#note {
+    width: 100%;
+    min-height: 100%;
+    border: none;
+    background: transparent;
+    line-height: 40px;
+    font-family: inherit;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    padding-left: 0;
+    color: #e0e0e0;
+    overflow-y: visible;
+    transition: all 0.3s ease;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#note:empty:before {
+    content: attr(placeholder);
+    color: #666;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: rgba(34, 34, 34, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+footer:hover {
+    background-color: rgba(40, 40, 40, 0.95);
+}
+
+footer a {
+    color: #888;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 10px;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+footer a:hover::after {
+    transform: scaleX(1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.toolbar, footer {
+    animation: fadeIn 0.5s ease-out;
+}
+
+#wordCount {
+    color: #888;
+    font-size: 14px;
+}

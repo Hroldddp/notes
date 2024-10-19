@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hroldddp notes</title>
+        <link rel="icon" type="image/png" href="icon.ico">
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="toolbar">
+            <div>
+                <button id="boldBtn" onclick="formatText('bold')">Bold</button>
+                <button id="italicBtn" onclick="formatText('italic')">Italic</button>
+                <select onchange="alignText(this.value)">
+                    <option value="left">Left</option>
+                    <option value="center">Center</option>
+                    <option value="right">Right</option>
+                </select>
+            </div>
+            <div id="wordCount"></div>
+        </div>
+        <div class="notebook">
+            <div id="note" contenteditable="true" placeholder="Type something..."></div>
+        </div>
+        <footer>
+            <a href="https://github.com/hroldddp">Coded by @hroldddp</a>
+        </footer>
+    </body>
+</html>
